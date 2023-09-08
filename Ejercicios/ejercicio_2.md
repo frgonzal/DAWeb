@@ -16,6 +16,12 @@ Tenga en cuenta las siguientes observaciones al realizar el ejercicio:
 
 **Respuesta**:
 
+El ataque XSS consiste en inyectar código malisioso en una web confiable, código que puede ser ejecutado por algun usuario de la aplicación web. Para prevenir un ataque XSS se tendría que revisar los formularios que se reciben y comprobar que no contengan ningún script ejecutable, solo despues de comprobar que el no contiene scripts se acepta el formulario para ser enviado.
+
+Un escenario especialmente peligroso sería que el atacante deje un script en la aplicación y que este, al ser ejecutado por un usuario, envie información personal y claves del usuario al atacante, lo que pondría en gran riesgo al usuario.
+
+
+
 ## Pregunta 2
 Existen variadas librerías y *frameworks* de Javascript que se pueden utilizar para programar tareas más complejas en el Frontend y manipular el DOM con mayor facilidad. Investigue, nombre y describa 3 de las librerías o Frameworks de javascript más usados en el desarrollo web (por ejemplo, **JQuery**). Si tuviese que implementar su página web ¿Cuál utilizaría?   
 
