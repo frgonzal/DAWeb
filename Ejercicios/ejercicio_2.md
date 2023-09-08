@@ -29,15 +29,15 @@ Existen variadas librerías y *frameworks* de Javascript que se pueden utilizar 
 
 - React.js:
 
-Es una biblioteca de JavaScript que se utiliza para crear interfaces de usuario. Es facil de aprender y tiene una sólida documentación. React permite trabajar con componentes reutilizables que conforman partes de la interfaz de usuario. Cuenta con un DOM virtual que permite que la renderización de las páginas sea más rápida. También es ampliamente extensible.
+Es una librería de JavaScript que se utiliza para crear interfaces de usuario. Es fácil de aprender y tiene una sólida documentación. React permite trabajar con componentes reutilizables que conforman partes de la interfaz de usuario. Cuenta con un DOM virtual que permite que la renderización de las páginas sea más rápida. También es ampliamente extensible.
 
 - AngularJS:
 
-Framework de JavaScript de codigo abierto. Utilizado para crear y mantener aplicaciones web de una sola página. AngularJS utiliza la arquitectura Modelo-Vista-Controlador. Posee un alro rendimiento, es fácil y rápido de adoptar, permite pruebas frecuentes, etc.  
+Framework de JavaScript de código abierto. Utilizado para crear y mantener aplicaciones web de una sola página. AngularJS utiliza la arquitectura Modelo-Vista-Controlador. Posee un alto rendimiento, es fácil y rápido de adoptar, y permite pruebas frecuentes.  
 
 - Node.js:
 
-Es un marco de trabajo de JavaScript del lado del servidor. Es un entorno de ejecución que ejecuta códigos JS fuera de un navegador. Esta diseñado para ayudar a desarrollar aplicaciones del lado del servidor escalables, rápidas y fiables basadas en la red.
+Es un entorno de ejecución que ejecuta códigos JS fuera de un navegador. Esta diseñado para ayudar a desarrollar aplicaciones del lado del servidor escalables, rápidas y fiables basadas en la red.
 
 
-Para implementar una página web probablemente utilizaria React.js, ya que parece ser la más simple de implementar y ofrece lo necesario para obtener un buen resultado.
+Para implementar una página web probablemente utilizaria React.js, ya que parece ser la más simple de implementar y ofrece muchas funcionalidades que mejoran el rendimiento.
