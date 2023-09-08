@@ -37,7 +37,7 @@ Framework de JavaScript de código abierto. Utilizado para crear y mantener apli
 
 - Node.js:
 
-Es un entorno de ejecución que ejecuta códigos JS fuera de un navegador. Esta diseñado para ayudar a desarrollar aplicaciones del lado del servidor escalables, rápidas y fiables basadas en la red.
+Es un framework de JS que ejecuta códigos JS fuera de un navegador. Esta diseñado para ayudar a desarrollar aplicaciones del lado del servidor escalables, rápidas y fiables basadas en la red.
 
 
 Para implementar una página web probablemente utilizaria React.js, ya que parece ser la más simple de implementar y ofrece muchas funcionalidades que mejoran el rendimiento.
