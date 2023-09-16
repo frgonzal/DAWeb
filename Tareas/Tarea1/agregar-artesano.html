@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Registrar Artesano</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/registro.css">
+</head>
+<body>
+
+    <div id="containerForm" class="container">
+        <div id="titulo"> Registrar Artesano </div>
+        
+        <form id="form">
+            
+            <div class="inputUser">
+                <label for="regiones"> Región donde vive</label>
+                <select id="regiones">
+                </select>
+            </div>
+        
+            <div class="inputUser">
+                <label for="comunas"> Comuna donde vive</label>
+                <select id="comunas">
+                </select>
+            </div>
+
+            <div class="inputUser">
+                <label for="crafts"> Tipo artesanía </label>
+                <select id="crafts"></select>
+                <div id="showSelectedCrafts" hidden>
+                    <p id="showSelectedCraftsTitle"> Tipo de Artesanías seleccionadas: </p>
+                    <ul id="showSelectedCraftsList"></ul>
+                </div>
+            </div>
+
+            <div class="inputUser">
+                <label for="description"> Descripción artesanías </label>
+                <textarea id="description" rows="4" cols="50"></textarea>
+            </div>
+
+            <div class="inputUser">
+                <label for="files"> Fotos artesanías </label>
+                <input id="files" type="file" multiple accept="image/*,.pdf" required>
+            </div>
+
+            <div class="inputUser">
+                <label for="name"> Nombre artesano(a) </label>
+                <input id="name" type="text" minlength="3" maxlength="80" required>
+            </div>
+
+            <div class="inputUser">
+                <label for="email"> mail contacto artesano(a) </label>
+                <input id="email" type="email" maxlength="30" required>
+            </div>
+
+            <div class="inputUser">
+                <label for="numero"> Número celular contacto </label>
+                <input id="numero" type="number" max="999999999999999" >
+            </div>
+
+
+            <button id="submit" type="button"> Registrar Artesano </button>
+        </form>
+    </div>
+    
+    <div id="confirmacionSubmit" class="container">
+        <p class="textoConfirmacion">¿Confirma el registro de este Artesano?</p>
+        <div class="opciones">
+            <button id="confirmar" type="submit" class="btnConf"> Sí, confirmo </button>
+            <button id="rechazar" type="button" class="btnConf"> No, quiero volver al formulario </button>
+        </div>
+    </div>
+
+    <div id="containerRegreso" class="container">
+        <p class="textoConfirmacion"> Hemos recibido el registro de Artesano. Muchas gracias. </p>
+        <button id="btnPortada" type="button" class="btnConf">Portada</button>
+    </div>
+
+
+<script src="./js/href.js"></script>
+<script src="./js/setOptions.js"></script>
+<script src="./js/validations.js"></script>
+<script src="./js/confirmacion.js"></script>
+<script src="./js/regArtesano.js"></script>
+
+</body>
+</html>

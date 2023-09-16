@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <title>HOLA</title>
+
+    <title>Juegos Panamericanos Chile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+
 </head>
-<body>
 
-    <div>
-    <button type="button" id="agregar-hincha">HOLA</button>
-    <button type="button" id="agregar-artesano">chao</button>
-    </div>
+<body style="background-color:rgb(255, 237, 237);">
 
+<div class="container">
 
+    <p id="titulo"> Juegos Panamericanos
+        <span style="color:Blue;">C</span><span style="color:white;">hi</span><span style="color:red;">le</span>
+    </p>
 
-<script>
-    let botonHincha = document.getElementById("agregar-hincha");
-    const hincha = () => window.location.href = "./agregar-hincha.html"
+    <button class = "button_" id="re-hincha">    Registrar hincha         </button >
+    <button class = "button_" id="re-artesano">  Registrar artesano       </button>
+    <button class = "button_" id="li-hincha">    Ver listado de hinchas   </button>
+    <button class = "button_" id="li-artesanos"> Ver listado de artesanos </button>
 
-    botonHincha.addEventListener("click", hincha);
+</div>
+
+<script src="./js/href.js"></script>
+<script >
+    let reHincha   = document.getElementById("re-hincha");
+    let reArtesano = document.getElementById("re-artesano");
+    let liHincha   = document.getElementById("li-hincha");
+    let liArtesano = document.getElementById("li-artesanos");
+    
+    reHincha.addEventListener("click", html_re_hincha);
+    liHincha.addEventListener("click", html_li_hincha);
+    reArtesano.addEventListener("click", html_re_artesano);
+    liArtesano.addEventListener("click", html_li_artesano);
 </script>
 </body>
-
-
-
 </html>
