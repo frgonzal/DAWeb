@@ -2,15 +2,14 @@ Franco González
 
 -Se utilizaron expresiones regulares para algunas validaciones.
 
--Los inputs con opciones vienen con sin valor, para que el usuario este obligado a ingresar algo.
+-Los inputs con opciones vienen sin valor, para que el usuario este obligado a ingresar algo.
 
 -La expresion regular para el correo la encontre aqui:
 "https://stackoverflow.com/questions/5861332/pattern-matching-email-address-using-regular-expressions".
 
--No estaba seguro de que formato debían seguir por lo que acepta solo números de 11 dígitos que comiencen
-con 569 o números de 9 dígitos que comiencen con 9 o números de 8 dígitos cualquiera. El input númerico no
-acepta espacios. El input permite "+" y "-" pero al obtener el '.value' del input no lo entrega con estos
-caracteres.
+-Se utilizo una expresion regular para los números de teléfono. El formato que deben tener los numeros de teléfono
+es: +56 9 XXXX-XXXX. Se puede omitir el '56', el '56 9', el '+', los espacios y el guion.
+"https://es.wikipedia.org/wiki/Anexo:Prefijos_telef%C3%B3nicos_de_Chile"
 
 -La validacion del nombre se asegura que usemos letras o _, y que no tenga espacios al inicio y al final,
  y que tampoco tenga espacio dobles entre palabras.
