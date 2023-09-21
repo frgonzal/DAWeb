@@ -56,7 +56,7 @@ const validateName = (name) => {
 };
 
 const validatePhoneNumber = (phone) => {
-    let re = /^5{1}6{1}9{1}[1234567890]{8}$|^9{1}[1234567890]{8}$|^[1234567890]{8}$|^$/;
+let re = /^(([+]{0,1}5{1}6{1}[ ]{0,1}9{1}[ ]{0,1})|(9{1}[ ]{0,1})|())[1234567890]{4}[-]{0,1}[1234567890]{4}$|^$/;
     console.log(re.test(phone.value));
     if(phone.value.length == 0 || (phone.value.length < 16 && re.test(phone.value)))
         return cleanError(phone);

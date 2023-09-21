@@ -41,21 +41,21 @@
 
             <div class="inputUser">
                 <label for="name"> Nombre </label>
-                <input id="name" type="text" minlength="3" maxlength="80" required>
+                <input id="name" type="text" minlength="3" maxlength="80" placeholder="Ej: Franco Antonio" required>
             </div>
 
             <div class="inputUser">
                 <label for="email"> Email contacto</label>
-                <input id="email" type="email" maxlength="30" required>
+                <input id="email" type="email" maxlength="30" placeholder="Ej: persona@mail.cl" required>
             </div>
 
             <div class="inputUser">
-                <label for="numero"> Número celular contacto </label>
-                <input id="numero" type="number" max="999999999999999" >
+                <label for="numero"> Número celular contacto (Opcional)</label>
+                <input id="numero" type="tel" placeholder="+56 9 XXXX-XXXX" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
             </div>
 
             <div class="inputUser">
-                <label for="comentarios"> Comentarios adicionales </label>
+                <label for="comentarios"> Comentarios adicionales (Opcional)</label>
                 <textarea id="comentarios"></textarea>
             </div>
 

@@ -5,40 +5,42 @@ body{
 }
 .container {
     background-color: rgb(221, 221, 221);
-    width: 840px;
-    min-width: 440px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border:10px solid;
-    border-radius: 20px;
+    border: 5px solid;
+    border-radius: 10px;
 }
 .rows {
     width: 100%;
-    min-height: 80px;
-    max-height: 480px;
-    border: 1px solid;
-
+    min-width: 400px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
 }
 .desc{
-    width: 100px;
-    min-width: 20px;
-    flex-shrink: 1;
-
+    border-top: 5px solid;
+    display: flex;
     background-color: rgb(130, 190, 255);
     font-weight: bolder;
     font-size: large;
-    border-right: 1px solid;
-    padding-left: 3%;
-    padding-top: 1%;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 1%;
 }
 .info{
-    padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    padding-bottom: 6%;
     font-size: large;
 }
 .foto{
+    border: 3px solid;
     cursor: pointer;
-    border: 1px solid;
+}
+.fotoG{
+    border: 10px solid;
+    border-radius: 20px;
+    cursor: pointer;
 }
