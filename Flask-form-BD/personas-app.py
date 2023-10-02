@@ -34,8 +34,8 @@ def agrega_persona(c, nombre, apellido):
 def getConnection():
     conn = pymysql.connect(
     db='ejemplo',
-    user='cc5002',
-    passwd='cc5002',
+    user='CC5002',
+    passwd='27111240',
     host='localhost',
     charset='utf8')
     return conn

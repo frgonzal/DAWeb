@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(163, 132, 132);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#btnPortada{
+    cursor: pointer;
+    position: relative;
+    margin-left: 4%;
+    margin-top: 1%;
+}
+.container{
+    margin-top: 5%;
+    background-color: rgb(252, 154, 154);
+    min-width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:3px solid black;
+    border-radius: 20px;
+}
+.rows{
+    cursor: pointer;
+    width: 100%;
+    min-height: 120px;
+    
+    display: flex;
+    border-top: 2px solid;
+}
+.titles{
+    width: 100%;
+    min-height: 50px;
+
+    display: flex;
+    font-weight: bolder;
+    font-size: 100%;
+}
+.columns{
+    border-right: 1px solid;
+    width: 20%;
+    flex-grow: 1; 
+    flex-shrink: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fotos{
+    width: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-shrink: 0;
+}

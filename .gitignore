@@ -1,3 +1,5 @@
 venv/
 Tareas/Tarea1.zip
 Auxiliares/
+*__pycache__/
+*.pdf

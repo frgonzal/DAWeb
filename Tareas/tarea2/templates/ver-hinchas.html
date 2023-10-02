@@ -1,0 +1,57 @@
+{% block title %} <title>Ver Hinchas</title> {% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ver.css')}}">
+{% endblock %}
+{% block body %}
+    <div id="container" class="container">
+        <div id="titles" class="titles">
+            <div class="columns">Nombre</div>
+            <div class="columns">Comuna</div>
+            <div class="columns">Deportes</div>
+            <div class="columns">Modo Transporte</div>
+            <div class="columns">Número celular</div>
+        </div>
+        <div id="persona1" class="rows">
+            <div class="columns"> Franco Antonio </div>
+            <div class="columns"> Pudahuel </div>
+            <div class="columns"> Boxeo, Ciclismo ruta, Levantamiento de pesas </div>
+            <div class="columns"> locomoción pública </div>
+            <div class="columns"> +56 9 1234-5678 </div>
+        </div>
+        <div id="persona2" class="rows">
+            <div class="columns"> Cristiano R </div>
+            <div class="columns"> Los Ríos </div>
+            <div class="columns"> Polo acuático, Bowling, Fútbol </div>
+            <div class="columns"> locomoción pública </div>
+            <div class="columns"> +56 9 0099-7711 </div>
+        </div>
+        <div id="persona3" class="rows">
+            <div class="columns"> Pedro A </div>
+            <div class="columns"> Aisén del G. Carlos Ibáñez del Campo </div>
+            <div class="columns"> Béisbol </div>
+            <div class="columns"> particular </div>
+            <div class="columns"> 9 9575-9213 </div>
+        </div>
+        <div id="persona4" class="rows">
+            <div class="columns"> Juan G </div>
+            <div class="columns"> Arica y Parinacota </div>
+            <div class="columns"> Surf, Taekwondo </div>
+            <div class="columns"> locomoción pública </div>
+            <div class="columns"> 9 1930-5929 </div>
+        </div>
+        <div id="persona5" class="rows">
+            <div class="columns"> Luis S </div>
+            <div class="columns"> Los Lagos </div>
+            <div class="columns"> Natación, Básquetbol 3x3, Tiro con arco </div>
+            <div class="columns"> locomoción pública </div>
+            <div class="columns"> 5918-3625 </div>
+        </div>
+    </div>
+
+{% block js %}
+<script  src="{{url_for('static',filename='js/href.js')}}"></script>
+<script >const info = html_in_hincha;</script>
+<script  src="{{url_for('static',filename='js/info.js')}}"></script>
+<script >verListado();</script>
+{% endblock %}
+{% endblock %}
