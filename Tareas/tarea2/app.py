@@ -1,13 +1,12 @@
 from flask import Flask, request, render_template, redirect, url_for
 
-
-
-
 app = Flask(__name__)
 
 @app.route("/")
 def index_():
     return redirect(url_for('index'))
+
+
 @app.route("/index/")
 def index():
     return render_template("index.html")
@@ -20,11 +19,11 @@ def registrar_hincha():
 def registrar_artesano():
     return render_template("agregar-artesano.html")
 
-@app.route("/ver_hinchas")
+@app.route("/ver_hinchas/")
 def ver_hinchas():
     return render_template("ver-hinchas.html")
 
-@app.route("/ver_artesanos")
+@app.route("/ver_artesanos/")
 def ver_artesanos():
     return render_template("ver-artesanos.html")
 
@@ -35,6 +34,7 @@ def info_hincha():
 @app.route("/info_artesano/")
 def info_artesano():
     return render_template("informacion-artesano.html")
+
 
 
 if __name__ == "__main__":
