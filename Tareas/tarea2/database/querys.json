@@ -1,5 +1,5 @@
 {
     "get_regiones" : "SELECT id, nombre FROM region;",
-    "get_comunas_from_region" : "SELECT nombre FROM comuna WHERE region_id = %s;"
+    "get_comunas_by_region" : "SELECT id, nombre FROM comuna WHERE region_id = %s;"
 
 }

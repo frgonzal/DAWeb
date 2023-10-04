@@ -15,6 +15,11 @@
             <div class="inputUser">
                 <label for="regiones"> Región donde vive</label>
                 <select id="regiones">
+                    {% if regiones %}
+                        {% for region in regiones %}
+                            <option> {{region}} </option>
+                        {% endfor %}
+                    {% endif %}
                 </select>
             </div>
         
@@ -78,6 +83,18 @@
 
 
 {% block js %}
+
+<script>
+const Regiones = [];
+const Comunas = {};
+"{% for region in regiones %}";
+    Regiones.push("{{region}}");
+    Comunas["{{region}}"] = [];
+    "{% for comuna in comunas[region] %}"
+        Comunas["{{region}}"].push("{{comuna}}");
+    "{% endfor %}"    
+"{% endfor %}";
+</script>
 <script src="{{url_for('static',filename='js/href.js')}}"></script>
 <script src="{{url_for('static',filename='js/setOptions.js')}}"></script>
 <script src="{{url_for('static',filename='js/validations.js')}}"></script>

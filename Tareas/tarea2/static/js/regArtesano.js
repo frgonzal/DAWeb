@@ -50,9 +50,11 @@ addCraftOption.addEventListener("input", addCraft);
 
 //opciones de input
 setCrafts();
-setRegiones();
+
 let regiones = document.getElementById("regiones");
+regiones.value = "";
 regiones.addEventListener("input", setComunas);
+console.log(Comunas);
 
 
 let btnConfirmar = document.getElementById("confirmar");

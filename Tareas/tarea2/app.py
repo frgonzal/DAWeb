@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for
+from database import db
 
 app = Flask(__name__)
 
@@ -17,7 +18,17 @@ def registrar_hincha():
 
 @app.route("/registrar_artesano/")
 def registrar_artesano():
-    return render_template("agregar-artesano.html")
+    regiones = []
+    comunas  = {}
+    for region in db.get_regiones():
+        id_region, nombreRegion = region
+        regiones.append(nombreRegion)
+        listaComunas = []
+        for comuna in db.get_comunas_by_region(id_region):
+            _, nombreComuna = comuna
+            listaComunas.append(nombreComuna)
+        comunas[nombreRegion] = listaComunas
+    return render_template("agregar-artesano.html", regiones=regiones, comunas=comunas)
 
 @app.route("/ver_hinchas/")
 def ver_hinchas():

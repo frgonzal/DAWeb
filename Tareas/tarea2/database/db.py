@@ -23,17 +23,20 @@ def get_conn():
     )
     return conn
 
-def setRegionComuna():
-    Regiones = []
-    Comunas = {}
+
+def get_regiones():
     conn = get_conn()
     cursor = conn.cursor()
     cursor.execute(QUERY_DICT["get_regiones"])
+    regiones = cursor.fetchall()
+    return regiones
 
-def get_comunas():
+def get_comunas_by_region(id_region):
     conn = get_conn()
-    cursor = conn.curson()
-    cursor.execute(QUERY_DICT["get_comunas_by_id"])
+    cursor = conn.cursor()
+    cursor.execute(QUERY_DICT["get_comunas_by_region"], (id_region,))
+    comunas = cursor.fetchall()
+    return comunas
 
 
 
