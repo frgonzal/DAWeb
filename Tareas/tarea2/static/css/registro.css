@@ -52,7 +52,7 @@ input{
     font-size: 300%;
 }
 
-#submit{
+#submitBtn{
     border: 10px inset rgb(252, 61, 61);
     border-radius: 25px;
     color: rgb(251, 251, 251);

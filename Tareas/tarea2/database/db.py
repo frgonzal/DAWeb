@@ -38,6 +38,13 @@ def get_comunas_by_region(id_region):
     comunas = cursor.fetchall()
     return comunas
 
+def get_artesanias():
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute(QUERY_DICT["get_artesanias"],)
+    artesanias = cursor.fetchall()
+    return artesanias
+
 
 
 

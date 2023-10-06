@@ -1,23 +1,29 @@
 from flask import Flask, request, render_template, redirect, url_for
 from database import db
+from utils import validations as va
 
 app = Flask(__name__)
 
-@app.route("/")
-def index_():
-    return redirect(url_for('index'))
 
 
-@app.route("/index/")
+@app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
 
-@app.route("/registrar_hincha/")
+@app.route("/registrar-hincha")
 def registrar_hincha():
     return render_template("agregar-hincha.html")
 
-@app.route("/registrar_artesano/")
+@app.route("/registrar-artesano/", methods=["GET", "POST"])
 def registrar_artesano():
+    error = []
+    if request.method == "POST":
+        if(va.validate_artesano(request.form) and va.validate_files(request.files.get("files"))):
+            ## post artesano...
+            return redirect(url_for("index"))
+        else:
+            error = "Error: ..."
+
     regiones = []
     comunas  = {}
     for region in db.get_regiones():
@@ -28,21 +34,33 @@ def registrar_artesano():
             _, nombreComuna = comuna
             listaComunas.append(nombreComuna)
         comunas[nombreRegion] = listaComunas
-    return render_template("agregar-artesano.html", regiones=regiones, comunas=comunas)
+    artesanias = []
+    for art in db.get_artesanias():
+        _, artesania = art
+        artesanias.append(artesania)
+    return render_template("agregar-artesano.html", error=error, regiones=regiones, comunas=comunas, artesanias=artesanias)
 
-@app.route("/ver_hinchas/")
+
+
+
+
+
+
+
+
+@app.route("/ver-hinchas/")
 def ver_hinchas():
     return render_template("ver-hinchas.html")
 
-@app.route("/ver_artesanos/")
+@app.route("/ver-artesanos/")
 def ver_artesanos():
     return render_template("ver-artesanos.html")
 
-@app.route("/info_hincha/")
+@app.route("/info-hincha/")
 def info_hincha():
     return render_template("informacion-hincha.html")
 
-@app.route("/info_artesano/")
+@app.route("/info-artesano/")
 def info_artesano():
     return render_template("informacion-artesano.html")
 

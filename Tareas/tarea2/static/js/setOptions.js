@@ -6,8 +6,6 @@ const Sports = [
     "Racquetball", "Remo", "Rugby 7", "Sóftbol", "Squash", "Surf", "Taekwondo", "Tenis", "Tenis de mesa", "Tiro", "Tiro con arco", "Triatlón", "Vela", "Vóleibol", "Vóleibol playa"
 ];
 
-const Crafts = [ "mármol", "madera", "cerámica", "mimbre", "metal", "cuero", "telas", "joyas", "otro tipo" ]
-
 const Transports = ["Particular","Locomoción pública"];
 
 const setDeportes = () => {
@@ -35,12 +33,4 @@ const setTransp = () => {
         transportSelect.innerHTML += "<option>"+transporte+"</option>";
     }
     transportSelect.value = "";
-};
-
-const setCrafts = () => {
-    let craftsSelect = document.getElementById("crafts");
-    for(const craft of Crafts){
-        craftsSelect.innerHTML += "<option>"+craft+"</option>";
-    }
-    craftsSelect.value = "";
 };

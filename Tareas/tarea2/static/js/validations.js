@@ -48,7 +48,7 @@ const validateTransport = (transport) => {
 
 const validateName = (name) => {
     let re = /^[\w]+([ ]{0,1}[\w]+)*$/;
-    if (!(0 < name.value.length && name.value.length < 81))
+    if (!(2 < name.value.length && name.value.length < 81))
         return errorMsg(name, "Dato Obligatorio. Largo mínimo 3, máximo 80.");
     if(!re.test(name.value))
         return errorMsg(name,"Formato incorrecto")
