@@ -62,10 +62,16 @@ let re = /^(([+]{0,1}5{1}6{1}[ ]{0,1}9{1}[ ]{0,1})|(9{1}[ ]{0,1})|())[1234567890
     return errorMsg(phone, "Debe cumplir con formato de número de teléfono móvil.");
 };
 
-const validateCraft = (crafts, selectedCrafts) => {
-    if (0 < selectedCrafts.length && selectedCrafts.length < 4)
-        return cleanError(crafts);
-    return errorMsg(crafts, "Dato obligatorio. Al menos 1 y máximo 3.");
+const validateCraft = (crafts) => {
+    const selectedOptions = Array.from(crafts.selectedOptions).map(option => option.value);
+
+    if(selectedOptions.length < 1 || 3 < selectedOptions.length )
+        return errorMsg(crafts, "Dato obligatorio. Al menos 1 y máximo 3.");
+    for( let craft of selectedOptions){
+        if(!Artesanias.includes(craft))
+            return errorMsg(crafts, "Dato obligatorio. Al menos 1 y máximo 3.");
+    }
+    return cleanError(crafts);
 };
 
 const validateDescription = (desc) =>{

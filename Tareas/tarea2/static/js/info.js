@@ -59,3 +59,4 @@ const verInfo = () => {
     document.getElementById("grande"+persona).addEventListener("click", reducirFoto);
 };
 
+

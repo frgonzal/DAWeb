@@ -1,6 +1,3 @@
-let selectedCrafts = [];
-
-
 const validateForm = () =>{
     let region      = document.getElementById("regiones");
     let comuna      = document.getElementById("comunas");
@@ -13,7 +10,7 @@ const validateForm = () =>{
     if(
         validateRegion(region)               &&
         validateComuna(comuna)               &&
-        validateCraft(crafts,selectedCrafts) &&
+        validateCraft(crafts) &&
         validateDescription(description)     &&
         validateFiles(files)                 &&
         validateName(name)                   &&
@@ -27,27 +24,6 @@ const validateForm = () =>{
 let submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", validate);
 //-----------------------------------------------
-
-let addCraftOption = document.getElementById("crafts");
-const addCraft = () => {
-    document.getElementById("showSelectedCrafts").hidden = false;
-    let craftList = document.getElementById("showSelectedCraftsList");
-    let craftVal  = addCraftOption.value;
-    if(craftVal.length > 0){
-        if(Artesanias.includes(craftVal) && !selectedCrafts.includes(craftVal))
-            selectedCrafts.push(craftVal);
-        else
-            selectedCrafts.splice(selectedCrafts.indexOf(craftVal),1);
-    }
-    if(selectedCrafts.length>3)
-        selectedCrafts.shift();
-    craftList.innerHTML = "";
-    for(const craft of selectedCrafts){
-        craftList.innerHTML += "<li>"+craft+"</li>";
-    }
-    addCraftOption.value = "";
-};
-addCraftOption.addEventListener("input", addCraft);
 
 
 //opciones de input

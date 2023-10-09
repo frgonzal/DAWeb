@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ver.css')}}">
+</head>
+
+
+<body>
+    <div id="container" class="container">
+
+        <div class="info">
+            <div id="titles" class="titles">{% block column_titles %}{% endblock %}</div>
+            {% block rows %}{% endblock %}
+        </div>
+
+        <div class="prev_next" >
+            {% if page.current > 0 %}
+                <a href="{{url_for('ver_artesanos', page=page.current-1)}}"> <button> <= prev </button> </a>
+            {% endif %}
+            {% if page.current < page.max %}
+                <a href="{{url_for('ver_artesanos', page=page.current+1)}}" > <button> next => </button> </a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

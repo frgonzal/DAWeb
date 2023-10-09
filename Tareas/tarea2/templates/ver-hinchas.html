@@ -3,14 +3,15 @@
 <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ver.css')}}">
 {% endblock %}
 {% block body %}
-    <div id="container" class="container">
-        <div id="titles" class="titles">
-            <div class="columns">Nombre</div>
-            <div class="columns">Comuna</div>
-            <div class="columns">Deportes</div>
-            <div class="columns">Modo Transporte</div>
-            <div class="columns">Número celular</div>
-        </div>
+<div class="container">
+    <div id="container" class="info">
+            <div id="titles" class="titles">
+                <div class="columns">Nombre</div>
+                <div class="columns">Comuna</div>
+                <div class="columns">Deportes</div>
+                <div class="columns">Modo Transporte</div>
+                <div class="columns">Número celular</div>
+            </div>
         <div id="persona1" class="rows">
             <div class="columns"> Franco Antonio </div>
             <div class="columns"> Pudahuel </div>
@@ -47,7 +48,7 @@
             <div class="columns"> 5918-3625 </div>
         </div>
     </div>
-
+</div>
 {% block js %}
 <script  src="{{url_for('static',filename='js/href.js')}}"></script>
 <script >const info = html_in_hincha;</script>

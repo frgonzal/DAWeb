@@ -11,10 +11,15 @@ body{
     margin-top: 1%;
 }
 .container{
+    display: flex;
+    flex-direction: column;
     margin-top: 5%;
-    background-color: rgb(252, 154, 154);
     min-width: 80%;
-
+    height: 100%;
+}
+.info{
+    background-color: rgb(252, 154, 154);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,4 +60,28 @@ body{
     align-items: center;
     
     flex-shrink: 0;
+}
+
+a{
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.prev_next {
+    padding:3%;
+    display: flex;
+    justify-content: space-between;
+    min-width: 80%;
+
+}
+button{
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 70px;
+    min-height: 35px;
+    border: solid black;
+    border-radius: 5px;
 }

@@ -12,17 +12,13 @@
 <!-- agregar la info de artesanias -->
     <div class="inputUser">
         <label for="crafts"> Tipo artesanía </label>
-        <select id="crafts" name="crafts">
+        <select id="crafts" name="crafts[]" multiple required>
             {% if artesanias %}
                 {% for artesania in artesanias %}
                     <option> {{artesania}} </option>
                 {% endfor %}
             {% endif %}
         </select>
-        <div id="showSelectedCrafts" hidden>
-            <p id="showSelectedCraftsTitle"> Tipo de Artesanías seleccionadas: </p>
-            <ul id="showSelectedCraftsList"></ul>
-        </div>
     </div>
 
     <div class="inputUser">
