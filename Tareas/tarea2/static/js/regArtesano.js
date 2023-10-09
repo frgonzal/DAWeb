@@ -1,7 +1,6 @@
 let selectedCrafts = [];
 
 
-
 const validateForm = () =>{
     let region      = document.getElementById("regiones");
     let comuna      = document.getElementById("comunas");
@@ -11,18 +10,20 @@ const validateForm = () =>{
     let email       = document.getElementById("email");
     let phone       = document.getElementById("phone");
     
-    if( !validateRegion(region) ||
-        !validateComuna(comuna) ||
-        !validateCraft(crafts,selectedCrafts) ||
-        !validateDescription(description) ||
-        !validateFiles(files) ||
-        !validateName(name) ||
-        !validateEmail(email) ||
-        !validatePhoneNumber(phone)
+    if(
+        validateRegion(region)               &&
+        validateComuna(comuna)               &&
+        validateCraft(crafts,selectedCrafts) &&
+        validateDescription(description)     &&
+        validateFiles(files)                 &&
+        validateName(name)                   &&
+        validateEmail(email)                 &&
+        validatePhoneNumber(phone)
     )
-        return false;
-    return true;
+        return true;
+    return false;
 };
+
 let submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", validate);
 //-----------------------------------------------
@@ -55,16 +56,10 @@ let regiones = document.getElementById("regiones");
 regiones.value = "";
 regiones.addEventListener("input", setComunas);
 
-
-let btnConfirmar = document.getElementById("confirmar");
-btnConfirmar.addEventListener("click", formConfirmar);
-
 let btnRechazar  = document.getElementById("rechazar");
 btnRechazar.addEventListener("click", formRechazar);
 
-
-let btnPortada  = document.getElementById("btnPortada");
-btnPortada.addEventListener("click", postForm);
+let btnConfirmar = document.getElementById("confirmar");
+btnConfirmar.addEventListener("click", postForm);
 
 document.getElementById("confirmacionSubmit").style.display = "none";
-document.getElementById("containerRegreso").style.display = "none";

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/registro.css')}}">
+</head>
+
+<body>
+
+    
+<div id="containerForm" class="container">
+    <div id="titulo">{% block form_title %}{% endblock %}</div>
+
+    <form id="myForm" action="{% block redirect %}{% endblock %}" method="post" enctype="multipart/form-data">
+
+        <div id="error_msg">
+            {% if errores %}
+                <p> Errores: </p>
+                {% for error in errores %}
+                    <li>{{error}}</li>
+                {% endfor %}
+            {% endif %}
+        </div>
+        
+        {% block beforeRegCom %}
+        {% endblock %}
+
+        <div class="inputUser">
+            <label for="regiones"> Región donde vive</label>
+            <select id="regiones" name="regiones">
+                {% if regiones %}
+                    {% for region in regiones %}
+                        <option> {{region}} </option>
+                    {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+
+        <div class="inputUser">
+            <label for="comunas"> Comuna donde vive</label>
+            <select id="comunas" name="comunas">
+            </select>
+        </div>
+
+        {% block afterRegCom %}
+        {% endblock %}
+    
+
+        <div class="inputUser">
+            <label for="name">{% block name_label %}{% endblock %}</label>
+            <input id="name" name="name" type="text" minlength="3" maxlength="80" placeholder="Ej: Franco Antonio" required>
+        </div>
+
+        <div class="inputUser">
+            <label for="email">{% block email_label %}{% endblock %}</label>
+            <input id="email" name="email" type="email" maxlength="30" placeholder="Ej: persona@mail.cl" required>
+        </div>
+
+        <div class="inputUser">
+            <label for="phone"> Número celular contacto (Opcional)</label>
+            <input id="phone" name="phone" type="tel" maxlength="15" placeholder="+56 9 XXXX-XXXX">
+        </div>
+
+        {% block others %}
+        {% endblock %}
+
+
+        <button id="submitBtn" type="button">{% block submitBtn_label %}{% endblock %}</button>
+    </form>
+</div>
+
+<div id="confirmacionSubmit" class="container">
+    <p class="textoConfirmacion">{% block confirmation_msg %}{% endblock %}</p>
+    <div class="opciones">
+        <button id="confirmar" type="button" class="btnConf"> Sí, confirmo </button>
+        <button id="rechazar" type="button" class="btnConf"> No, quiero volver al formulario </button>
+    </div>
+</div>
+
+
+<script>
+    const Regiones   = {{ regiones | tojson }};
+    const Comunas    = {{ comunas  | tojson }};
+</script>
+
+<script src="{{url_for('static',filename='js/href.js')}}"></script>
+<script src="{{url_for('static',filename='js/setOptions.js')}}"></script>
+<script src="{{url_for('static',filename='js/validations.js')}}"></script>
+<script src="{{url_for('static',filename='js/confirmacion.js')}}"></script>
+
+{% block js %}{% endblock %}
+
+</body>
+</html>

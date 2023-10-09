@@ -13,6 +13,7 @@ const validate = () => {
     if (validateForm()){
         document.getElementById("confirmacionSubmit").style.display = "flex";
         document.getElementById("containerForm").style.display = "none";
+        document.getElementById("error_msg").style.display = "none";
     }
 };
 
@@ -26,4 +27,5 @@ const formRechazar = () => {
     document.getElementById("containerForm").style.display = "flex";
     document.getElementById("confirmacionSubmit").style.display = "none";
     document.getElementById("submitBtn").style.display = "flex";
+    document.getElementById("error_msg").style.display = "flex";
 };

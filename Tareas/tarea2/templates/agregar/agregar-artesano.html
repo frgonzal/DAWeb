@@ -1,0 +1,52 @@
+{% extends 'agregar/agregar-base.html' %}
+
+
+{% block title %} Registrar Artesano {% endblock %}
+{% block form_title %} Registrar Artesano {% endblock %}
+{% block redirect %} {{url_for('submited_artesano')}} {% endblock %}
+
+{% block beforeRegCom %}
+{% endblock %}
+
+{% block afterRegCom %}
+<!-- agregar la info de artesanias -->
+    <div class="inputUser">
+        <label for="crafts"> Tipo artesanía </label>
+        <select id="crafts" name="crafts">
+            {% if artesanias %}
+                {% for artesania in artesanias %}
+                    <option> {{artesania}} </option>
+                {% endfor %}
+            {% endif %}
+        </select>
+        <div id="showSelectedCrafts" hidden>
+            <p id="showSelectedCraftsTitle"> Tipo de Artesanías seleccionadas: </p>
+            <ul id="showSelectedCraftsList"></ul>
+        </div>
+    </div>
+
+    <div class="inputUser">
+        <label for="description"> Descripción artesanías (Opcional)</label>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea>
+    </div>
+
+    <div class="inputUser">
+        <label for="files"> Fotos artesanías </label>
+        <input id="files" name="files" type="file" multiple accept="image/*,.pdf" required>
+        </div>
+{% endblock %}
+
+{% block name_label %} Nombre artesano(a) {% endblock %}
+{% block email_label %} Email contacto artesano(a) {% endblock %}
+
+{% block others %}{% endblock %}
+
+
+{% block submitBtn_label %} Registrar Artesano {% endblock %}
+
+{% block confirmation_msg %} ¿Confirma el registro de este Artesano? {% endblock %}
+
+{% block js %}
+<script> const Artesanias = {{ artesanias | tojson }}; </script>
+<script src="{{url_for('static',filename='js/regArtesano.js')}}"></script>
+{% endblock %}

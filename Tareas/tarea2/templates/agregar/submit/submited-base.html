@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/registro.css')}}">
+</head>
+
+<body>
+<div id="containerRegreso" class="container">
+    <p class="textoConfirmacion">{% block submit_msg %}{% endblock %}</p>
+
+    <a href="{{url_for('index')}}">
+        <button id="btnPortada"  type="button" class="btnConf"> Portada </button>
+    </a>
+
+</div>
+    
+</body>
+</html>

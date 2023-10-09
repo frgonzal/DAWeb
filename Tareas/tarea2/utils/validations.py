@@ -2,20 +2,36 @@ import re
 import filetype
 
 
-def validate_artesano(form):
-    region  = form.get("regiones")
-    comuna  = form.get("comunas")
-    artesan = form.get("crafts")
-    descrip = form.get("description")
-    name    = form.get("name")
-    email   = form.get("email")
-    phone   = form.get("phone")
-    return  (
-                validate_region(region)     and validate_comuna(comuna)       and
-                validate_artesania(artesan) and validate_description(descrip) and
-                validate_name(name)         and validate_email(email)         and
-                validate_phone(phone)
-             )
+def validate_artesano(request):
+    error = []
+    region  = request.form.get("regiones")
+    comuna  = request.form.get("comunas")
+    artesan = request.form.get("crafts")
+    descrip = request.form.get("description")
+    name    = request.form.get("name")
+    email   = request.form.get("email")
+    phone   = request.form.get("phone")
+    files   = request.files.get("files")
+
+
+    if not validate_region(region):
+        error.append("Region") 
+    if not validate_comuna(comuna):
+        error.append("Comuna")
+    if not validate_artesania(artesan):
+        error.append("Tipo artesanía ")
+    if not validate_description(descrip):
+        error.append("Descripción artesanías")
+    if not validate_files(files):
+        error.append("Fotos artesanías")
+    if not validate_name(name):
+        error.append("Nombre artesano(a)")
+    if not validate_email(email):
+        error.append("Email contacto artesano(a) ")
+    if not validate_phone(phone):
+        error.append("Número celular contacto")
+
+    return error
 
 def validate_region(region):
     return True

@@ -57,7 +57,6 @@ const validateName = (name) => {
 
 const validatePhoneNumber = (phone) => {
 let re = /^(([+]{0,1}5{1}6{1}[ ]{0,1}9{1}[ ]{0,1})|(9{1}[ ]{0,1})|())[1234567890]{4}[-]{0,1}[1234567890]{4}$|^$/;
-    console.log(re.test(phone.value));
     if(phone.value.length == 0 || (phone.value.length < 16 && re.test(phone.value)))
         return cleanError(phone);
     return errorMsg(phone, "Debe cumplir con formato de número de teléfono móvil.");
