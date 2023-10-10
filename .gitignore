@@ -4,3 +4,4 @@ Auxiliares/
 *__pycache__/
 *.pdf
 Tareas/tarea2/static/uploads/
+*.zip
