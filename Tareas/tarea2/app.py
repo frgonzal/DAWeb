@@ -57,9 +57,10 @@ def submited_artesano():
     name  = form.get("name")
     email = form.get("email")
     phone = form.get("phone")
-    files = request.files.getlist("files")
+    files = request.files.getlist("files[]")
 
     errores = va.validate_artesano(region, comuna, artesanias, description, name, email, phone, files)
+
 
     if(not errores):
         try:

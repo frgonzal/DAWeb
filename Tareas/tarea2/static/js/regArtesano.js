@@ -5,12 +5,13 @@ const validateForm = () =>{
     let description = document.getElementById("description");
     let name        = document.getElementById("name");
     let email       = document.getElementById("email");
-    let phone       = document.getElementById("phone");
-    
+    let phone       = document.getElementById("phone");    
+    let files       = document.getElementById("files");
+
     if(
         validateRegion(region)               &&
         validateComuna(comuna)               &&
-        validateCraft(crafts) &&
+        validateCraft(crafts)                &&
         validateDescription(description)     &&
         validateFiles(files)                 &&
         validateName(name)                   &&

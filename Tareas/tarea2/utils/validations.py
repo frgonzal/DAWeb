@@ -49,6 +49,7 @@ def validate_phone(phone):
     return (len(phone)==0) or (7<len(phone)<16 and bool(re.match(pattern, phone)))
 
 def validate_files(files):
+    print(files)
     ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif", "pdf"}
     ALLOWED_MIMETYPES = {"image/jpeg", "image/png", "image/gif", "image/pdf"}
 
@@ -56,6 +57,7 @@ def validate_files(files):
         return False
 
     for file in files:
+        print(file)
         if file.filename == "":
             return False
         ftype_guess = filetype.guess(file)
