@@ -9,6 +9,9 @@
 
 
 <body>
+    <div class="navbar">
+        <a href="{{url_for('index')}}"> <button> Inicio </button> </a>
+    </div>
     <div id="container" class="container">
 
         <div class="info">
@@ -16,13 +19,17 @@
             {% block rows %}{% endblock %}
         </div>
 
-        <div class="prev_next" >
-            {% if page.current > 0 %}
-                <a href="{{url_for('ver_artesanos', page=page.current-1)}}"> <button> <= prev </button> </a>
-            {% endif %}
-            {% if page.current < page.max %}
-                <a href="{{url_for('ver_artesanos', page=page.current+1)}}" > <button> next => </button> </a>
-            {% endif %}
+        <div class="prev_next">
+            <div class="prev">
+                {% if page_info.current > 0 %}
+                    <a href="{% block ref_prev %}{% endblock %}"> <button> <= prev </button> </a>
+                {% endif %}
+            </div>
+            <div class="next">
+                {% if page_info.current < page_info.max %}
+                    <a href="{% block ref_next %}{% endblock %}"> <button> next => </button> </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </body>

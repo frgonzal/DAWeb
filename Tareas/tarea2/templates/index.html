@@ -1,28 +1,31 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="es">
 
-    {% block title %}Juegos Panamericanos Chile{% endblock %}
-    {% block css %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title> Juegos Panamericanos Chile </title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}">
-    {% endblock %}
+</head>
 
-{% block body %}
-<div class="container">
-    <p id="titulo"> Juegos Panamericanos
-        <span style="color:Blue;">C</span><span style="color:white;">hi</span><span style="color:red;">le</span>
-    </p>
+<body>
+    <div class="container">
+        <p id="titulo"> Juegos Panamericanos
+            <span style="color:Blue;">C</span><span style="color:white;">hi</span><span style="color:red;">le</span>
+        </p>
+        
+        <a href="{{url_for('registrar_hincha')}}">
+            <button class = "button_" id="re-hincha">        Registrar hincha         </button >
+            </a>
+            <a href="{{url_for('registrar_artesano')}}">
+                <button class = "button_" id="re-artesano">  Registrar artesano       </button>
+            </a>
+            <a href="{{url_for('ver_hinchas', page=0)}}">
+                <button class = "button_" id="li-hincha">    Ver listado de hinchas   </button>
+            </a>
+            <a href="{{url_for('ver_artesanos', page=0)}}">
+                <button class = "button_" id="li-artesanos"> Ver listado de artesanos </button>
+            </a>
+        </div>
 
-    <a href="{{url_for('registrar_hincha')}}">
-        <button class = "button_" id="re-hincha">  Registrar hincha         </button >
-    </a>
-    <a href="{{url_for('registrar_artesano')}}">
-        <button class = "button_" id="re-artesano">Registrar artesano       </button>
-    </a>
-    <a href="{{url_for('ver_hinchas')}}">
-        <button class = "button_" id="li-hincha">  Ver listado de hinchas   </button>
-    </a>
-    <a href="{{url_for('ver_artesanos', page=0)}}">
-        <button class = "button_" id="li-artesanos"> Ver listado de artesanos </button>
-    </a>
-</div>
-{% block js %}{% endblock %}
-{% endblock %}
+    </body>
+</html>

@@ -22,10 +22,15 @@ const validateEmail = (email) => {
     return cleanError(email);
 };
 
-const validateSports = (sports, selectedSports) => {
-    if (0 < selectedSports.length && selectedSports.length < 4)
-        return cleanError(sports);
-    return errorMsg(sports,"Dato obligatorio. Debe seleccionar al menos 1 y máximo 3.");
+const validateSports = (sports) => {
+    const selectedOptions = Array.from(sports.selectedOptions).map(option => option.value);
+    if(selectedOptions.length < 1 || 3 < selectedOptions.length )
+        return errorMsg(sports, "Dato obligatorio. Al menos 1 y máximo 3.");
+    for( let sport of selectedOptions){
+        if(!Sports.includes(sport))
+            return errorMsg(sports, "Dato obligatorio. Al menos 1 y máximo 3.");
+    }
+    return cleanError(sports);
 };
 
 const validateRegion = (region) => {
@@ -47,8 +52,9 @@ const validateTransport = (transport) => {
 };
 
 const validateName = (name) => {
-    let re = /^[\w]+([ ]{0,1}[\w]+)*$/;
-    if (!(2 < name.value.length && name.value.length < 81))
+
+    let re = /^[\wñáéíóúÁÉÍÓÚ]+([ ]{0,1}[\wñáéíóúÁÉÍÓÚ]+)*$/;
+    if (!(3 <= name.value.length && name.value.length <= 80))
         return errorMsg(name, "Dato Obligatorio. Largo mínimo 3, máximo 80.");
     if(!re.test(name.value))
         return errorMsg(name,"Formato incorrecto")

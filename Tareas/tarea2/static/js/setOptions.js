@@ -17,14 +17,14 @@ const setDeportes = () => {
 };
 
 const setComunas = () => {
-    let regionesSelect = document.getElementById("regiones");
-    let comunasSelect = document.getElementById("comunas");
-    comunasSelect.innerHTML = "";
+    let regiones = document.getElementById("regiones");
+    let comunas  = document.getElementById("comunas");
+    comunas.innerHTML = "";
 
-    for(let comuna of Comunas[regionesSelect.value]){
-        comunasSelect.innerHTML += "<option>"+comuna+"</option>";
+    for(let comuna of Comunas[regiones.value]){
+        comunas.innerHTML += "<option>"+comuna+"</option>";
     }
-    comunasSelect.value = "";
+    comunas.value = "";
 };
 
 const setTransp = () => {

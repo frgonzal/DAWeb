@@ -12,8 +12,8 @@ app.config["UPLOAD_FOLDER"] = "static/uploads"
 app.config["MAX_CONTENT_LENGHT"] = 16*1000*1000
 
 ## To read the secret key
-with open("./utils/secretkey.txt", "r") as keyFile:
-    app.secret_key = str(keyFile.read())
+with open("./secret/secretkey.txt", "r") as keyFile:
+    app.secret_key = keyFile.read()
 
 
 """ Pagina de inicio """
@@ -26,7 +26,7 @@ def index():
 """ Registro de un hincha """
 @app.route("/registrar/hincha", methods=["GET"])
 def registrar_hincha():
-    errores = session.pop("error_agregar_hincha") if "error_agregar_hincha" in session else None
+    errores = session.pop("err_hincha") if "err_hincha" in session else None
     regiones, comunas = getFromDB.regiones_comunas()
     return render_template("agregar/agregar-hincha.html", errores=errores, regiones=regiones, comunas=comunas)
 
@@ -39,10 +39,7 @@ def submited_hincha():
 """ Registro de un Artesano """
 @app.route("/registrar/artesano", methods=["GET"])
 def registrar_artesano():
-    if "error_agregar_artesano" in session:
-        errores = session.pop("error_agregar_artesano")
-    else:
-        errores = None
+    errores = session.pop("err_artesano") if "err_artesano" in session else None
     regiones, comunas = getFromDB.regiones_comunas()
     artesanias = getFromDB.artesanias()
     return render_template("agregar/agregar-artesano.html", errores=errores, regiones=regiones, comunas=comunas, artesanias=artesanias)
@@ -77,35 +74,37 @@ def submited_artesano():
                 db.insert_artesano_tipo(id_artesano, artesania)
             return render_template("agregar/submit/submited-artesano.html")
         except:
-            session["error_agregar_artesano"] = ["error al agregar artesano"]
+            session["err_artesano"] = ["error al agregar artesano"]
             return redirect(url_for("registrar_artesano"))
     else:
-        session["error_agregar_artesano"] = errores
+        session["err_artesano"] = errores
         return redirect(url_for("registrar_artesano"))
 
 
 
 """ Informacion Hinchas """
-@app.route("/ver/hinchas")
-def ver_hinchas():
-    return render_template("ver-hinchas.html")
+@app.route("/ver/hinchas/<int:page>")
+def ver_hinchas(page):
+    maxPage = 100
+    if page > maxPage:
+        return redirect(url_for("ver_hinchas", page=maxPage))
+    page_info = {"current":page,"max":maxPage}
+    return render_template("ver/ver-hinchas.html", hinchas=[1,2,3,4,5], page_info=page_info)
 
-@app.route("/info/hincha/")
-def info_hincha():
-    return render_template("informacion-hincha.html")
+@app.route("/info/hincha/<int:id_hincha>")
+def info_hincha(id_hincha):
+    return render_template("info/informacion-hincha.html", hincha=[0])
 
 """ Informacion Artesanos"""
 @app.route("/ver/artesanos/<int:page>")
 def ver_artesanos(page):
-    if page < 0:
-        return redirect(url_for("ver_artesanos", page=0))
     maxPage = (db.get_artesanos_total()[0]-1)//5
     if page > maxPage:
         return redirect(url_for("ver_artesanos", page=maxPage))
     artesanos = getFromDB.artesanos(offset=page*5)
 
     page_info = {"current":page,"max":maxPage}
-    return render_template("ver/ver-artesanos.html", artesanos=artesanos, page=page_info)
+    return render_template("ver/ver-artesanos.html", artesanos=artesanos, page_info=page_info)
 
 @app.route("/info/artesano/<int:id_artesano>")
 def info_artesano(id_artesano):
@@ -113,7 +112,7 @@ def info_artesano(id_artesano):
         artesano = getFromDB.artesano(id_artesano)
         return render_template("info/informacion-artesano.html", artesano=artesano)
     except:
-        return redirect(url_for("ver_artesanos", page=0))
+        return render_template("info/informacion-artesano.html", artesano=None)
 
 
 

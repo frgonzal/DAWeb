@@ -1,0 +1,35 @@
+{% extends 'ver/ver-base.html' %}
+
+{% block title %} Ver Hinchas {% endblock %}
+
+{% block column_titles %}
+    <div class="columns">Nombre</div>
+    <div class="columns">Comuna</div>
+    <div class="columns">Deportes</div>
+    <div class="columns">Modo Transporte</div>
+    <div class="columns">Número celular</div>
+{% endblock %}
+
+{% block rows %}
+    {% if hinchas %}
+        {% for hincha in hinchas %}
+            <a href="{{url_for('info_hincha', id_hincha=1)}}">
+                <div class="rows">
+                    <div class="columns"> Franco Antonio                               </div>
+                    <div class="columns"> Pudahuel                                     </div>
+                    <div class="columns"> Boxeo, Ciclismo ruta, Levantamiento de pesas </div>
+                    <div class="columns"> locomoción pública                           </div>
+                    <div class="columns"> +56 9 1234-5678                              </div>
+                </div>
+            </a>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+
+{% block ref_prev %}
+    {{url_for('ver_hinchas', page=page_info.current-1)}}
+{% endblock %}
+{% block ref_next %}
+    {{url_for('ver_hinchas', page=page_info.current+1)}}
+{% endblock %}

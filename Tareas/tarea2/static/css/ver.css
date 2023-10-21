@@ -68,13 +68,21 @@ a{
     text-decoration: none;
     font-weight: bold;
 }
-
 .prev_next {
-    padding:3%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    min-width: 80%;
-
+    width: 100%;
+}
+.prev {
+    order: 1;
+    padding-left: 5%;
+    padding-top: 1%;
+}
+.next {
+    order: 2;
+    padding-right: 5%;
+    padding-top: 1%;
 }
 button{
     font-size: medium;
@@ -84,4 +92,8 @@ button{
     min-height: 35px;
     border: solid black;
     border-radius: 5px;
+}
+
+.navbar{
+    width: 100%;
 }

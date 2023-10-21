@@ -6,19 +6,17 @@
 
 
 {% block beforeRegCom %}
-<div class="inputUser">
-    <label for="sports"> Deporte(s) que interesa apoyar </label>
-    <select id="sports"></select>
-    <div id="showSelectedSports" hidden>
-        <p id="showSelectedSportsTitle"> Deportes Seleccionados: </p>
-        <ul id="showSelectedSportsList"></ul>
+    <div class="inputUser">
+        <label for="sports"> Deporte(s) que interesa apoyar </label>
+        <select id="sports" name="sports[]" multiple required>
+        </select>
     </div>
-</div>
 {% endblock %}
 {% block afterRegCom %}
             <div class="inputUser">
                 <label for="transporte"> Modo de Transporte </label>
-                <select id="transporte">
+                <select id="transporte" required>
+
                 </select>
             </div>
 {% endblock %}
@@ -37,5 +35,5 @@
 {% block confirmation_msg %} ¿Confirma el registro de este hincha? {% endblock %}
 
 {% block js %}
-<script src="{{url_for('static',filename='js/regHincha.js')}}"></script>
+<script src="{{url_for('static',filename='js/registro/hincha.js')}}"></script>
 {% endblock %}

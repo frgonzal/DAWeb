@@ -12,7 +12,7 @@
     "get_artesanias_by_id_artesano":"SELECT nombre FROM artesano_tipo, tipo_artesania WHERE artesano_id=%s AND tipo_artesania_id=id;",
     "get_file_by_id_artesano":"SELECT ruta_archivo, nombre_archivo FROM foto WHERE artesano_id=%s;",
 
-    "get_artesanos_offset":"SELECT artesano.id, artesano.nombre, artesano.celular, comuna.nombre FROM artesano AS artesano, comuna AS comuna WHERE artesano.comuna_id=comuna.id LIMIT 5 OFFSET %s;",
+    "get_artesanos_offset":"SELECT artesano.id, artesano.nombre, artesano.celular, comuna.nombre FROM artesano AS artesano, comuna AS comuna WHERE artesano.comuna_id=comuna.id ORDER BY artesano.id DESC LIMIT 5 OFFSET %s;",
     "get_artesano_by_id":"SELECT reg.nombre, com.nombre, art.descripcion_artesania, art.nombre, art.email, art.celular FROM artesano AS art, comuna AS com, region AS reg WHERE art.id=%s AND art.comuna_id=com.id AND com.region_id=reg.id;",
 
     "get_artesanos_total":"SELECT COUNT(*) FROM artesano;",

@@ -26,4 +26,12 @@
     {% endif %}
 {% endblock %}
 
+{% block ref_prev %}
+    {{url_for('ver_artesanos', page=page_info.current-1)}}
+{% endblock %}
+{% block ref_next %}
+    {{url_for('ver_artesanos', page=page_info.current+1)}}
+{% endblock %}
+
+
         

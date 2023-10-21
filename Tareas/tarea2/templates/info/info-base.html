@@ -8,6 +8,10 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <a href="{{url_for('index')}}"> <button> Inicio </button> </a>
+    </div>
+    
     <div id="container" class="container">
         {% block content %}{% endblock %}
     </div>

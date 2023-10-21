@@ -26,9 +26,9 @@ let submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", validate);
 //-----------------------------------------------
 
+let artesanias = document.getElementById("crafts")
+artesanias.value = "";
 
-//opciones de input
-document.getElementById("crafts").value = "";
 let regiones = document.getElementById("regiones");
 regiones.value = "";
 regiones.addEventListener("input", setComunas);

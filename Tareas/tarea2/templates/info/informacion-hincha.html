@@ -1,0 +1,45 @@
+{% extends 'info/info-base.html' %}
+{% block title %} Informacion Hincha {% endblock %}
+
+{% block content %}
+    {% if hincha %}
+        <div class="rows">
+            <div class="desc"> Deporte(s) que interesa apoyar </div>
+            <div class="info"> Boxeo, Fútbol, Levantamiento de pesas </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Región donde vive </div> 
+            <div class="info"> Metropolitana de Santiago </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Comuna donde vive </div> 
+            <div class="info"> Pudahuel </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Modo de transporte </div> 
+            <div class="info"> locomoción pública </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Nombre </div> 
+            <div class="info"> Franco Antonio </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Email contacto </div> 
+            <div class="info"> franco.gonzalez.l@ug.uchile.cl </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Número celular contacto </div> 
+            <div class="info"> +56 9 1234-5678 </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Comentarios adicionales </div> 
+            <div class="info"> Muy interesado en participar, saludos! </div>
+        </div>
+
+    {% else %}
+        <p> Artesano no encontrado... </p>
+    {% endif %}
+{% endblock %}
+
+{% block others %}{% endblock %}
+{% block js %}{% endblock %}
