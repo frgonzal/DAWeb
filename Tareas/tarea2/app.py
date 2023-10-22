@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename
 import hashlib
 import filetype
 import os
+import uuid
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "static/uploads"
@@ -62,16 +63,20 @@ def submited_artesano():
     if(not errores):
         try:
             id_artesano = db.insert_artesano( comuna, description, name, email, phone)
+
             for img in files:
                 _filename = hashlib.sha256(
-                    secure_filename(img.filename).encode("utf-8")
+                        secure_filename(img.filename).
+                        encode("utf-8")
                     ).hexdigest()
                 _extension = filetype.guess(img).extension
-                img_filename = f"{_filename}.{_extension}"
+                img_filename = f"{_filename}_{str(uuid.uuid4())}.{_extension}"
                 img.save(os.path.join(app.config["UPLOAD_FOLDER"], img_filename))
                 db.insert_foto(app.config["UPLOAD_FOLDER"], img_filename, id_artesano)
+
             for artesania in artesanias:
                 db.insert_artesano_tipo(id_artesano, artesania)
+
             return render_template("agregar/submit/submited-artesano.html")
         except:
             session["err_artesano"] = ["error al agregar artesano"]

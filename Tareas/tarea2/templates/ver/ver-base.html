@@ -22,12 +22,12 @@
         <div class="prev_next">
             <div class="prev">
                 {% if page_info.current > 0 %}
-                    <a href="{% block ref_prev %}{% endblock %}"> <button> <= prev </button> </a>
+                    <a href="{% block ref_prev %}{% endblock %}"> <button> <= Página Previa </button> </a>
                 {% endif %}
             </div>
             <div class="next">
                 {% if page_info.current < page_info.max %}
-                    <a href="{% block ref_next %}{% endblock %}"> <button> next => </button> </a>
+                    <a href="{% block ref_next %}{% endblock %}"> <button> Página Siguiente => </button> </a>
                 {% endif %}
             </div>
         </div>

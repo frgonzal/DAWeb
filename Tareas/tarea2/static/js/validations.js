@@ -93,15 +93,17 @@ const validateComment = (comment) => {
 };
 
 const validateFiles = (files) => {
-    if (!files.files) return false;
-
-    let validLength = (0 < files.files.length) && (files.files.length < 4);
-    let validType = true;
+    if (!files.files){
+        return errorMsg(files,"Obligatorio. Mínimo 1, máximo 3.");
+    };
+    if (!(0 < files.files.length && files.files.length < 4)){
+        return errorMsg(files,"Mínimo 1, máximo 3.");
+    };
     for(const file of files.files){
         let fileFamily = file.type.split("/")[0];
-        validType &&= fileFamily == "image" || file.type == "application/pdf";
+        if(!( fileFamily == "image")){
+            return errorMsg(files, "Debe ser una imagen.")
+        };
     };
-    if (validLength && validType)
-        return cleanError(files);
-    return errorMsg(files,"Obligatorio. Mínimo 1, máximo 3.");
+    return cleanError(files);
 };

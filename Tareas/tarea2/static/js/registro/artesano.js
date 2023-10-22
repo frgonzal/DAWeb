@@ -1,3 +1,14 @@
+const cleanErrors = () => {
+    cleanError(document.getElementById("regiones"));
+    cleanError(document.getElementById("comunas"));
+    cleanError(document.getElementById("crafts"));
+    cleanError(document.getElementById("description"));
+    cleanError(document.getElementById("name"));
+    cleanError(document.getElementById("email"));
+    cleanError(document.getElementById("phone"));
+    cleanError(document.getElementById("files"));
+}
+
 const validateForm = () =>{
     let region      = document.getElementById("regiones");
     let comuna      = document.getElementById("comunas");
@@ -40,3 +51,6 @@ let btnConfirmar = document.getElementById("confirmar");
 btnConfirmar.addEventListener("click", postForm);
 
 document.getElementById("confirmacionSubmit").style.display = "none";
+
+let myForm = document.getElementById("myForm");
+myForm.addEventListener("input", cleanErrors);

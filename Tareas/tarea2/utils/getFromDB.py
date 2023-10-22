@@ -34,13 +34,12 @@ def artesanos(offset):
         artesanias = db.get_artesanias_by_id_artesano(id_artesano)
         _, filename  = db.get_file_by_id_artesano(id_artesano)
 
-        artesano["id"] = id_artesano
-        artesano["offset"] = offset
-        artesano["name"]   = name
-        artesano["phone"]  = phone
-        artesano["comuna"] = comuna
+        artesano["id"]         = id_artesano
+        artesano["name"]       = name
+        artesano["phone"]      = phone
+        artesano["comuna"]     = comuna
+        artesano["file"]       = f"uploads/{filename}"
         artesano["artesanias"] = ", ".join([artes_[0] for artes_ in artesanias])
-        artesano["file"] = "uploads/"+str(filename)
 
         artesanos.append(artesano)
 
@@ -53,14 +52,14 @@ def artesano(id_artesano):
     artesanias = db.get_artesanias_by_id_artesano(id_artesano)
     _, filename  = db.get_file_by_id_artesano(id_artesano)
 
-    artesano["region"]      = region
-    artesano["comuna"]      = comuna
-    artesano["artesanias"]  = ", ".join([artes_[0] for artes_ in artesanias])
-    artesano["description"] = description
-    artesano["file"]        = "uploads/"+str(filename)
     artesano["name"]        = name
     artesano["email"]       = email
     artesano["phone"]       = phone
+    artesano["region"]      = region
+    artesano["comuna"]      = comuna
+    artesano["description"] = description
+    artesano["file"]        = f"uploads/{filename}"
+    artesano["artesanias"]  = ", ".join([artes_[0] for artes_ in artesanias])
 
     return artesano
 

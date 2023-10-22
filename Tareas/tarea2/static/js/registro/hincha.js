@@ -1,3 +1,14 @@
+const cleanErrors = () => {
+    cleanError(document.getElementById("sports"));
+    cleanError(document.getElementById("regiones"));
+    cleanError(document.getElementById("comunas"));
+    cleanError(document.getElementById("transporte"));
+    cleanError(document.getElementById("name"));
+    cleanError(document.getElementById("email"));
+    cleanError(document.getElementById("phone"));
+    cleanError(document.getElementById("comentarios"));
+};
+
 const validateForm = () =>{
     let sports  = document.getElementById("sports");
     let region  = document.getElementById("regiones");
@@ -42,3 +53,6 @@ let btnRechazar  = document.getElementById("rechazar");
 btnRechazar.addEventListener("click", formRechazar);
 
 document.getElementById("confirmacionSubmit").style.display = "none";
+
+let myForm = document.getElementById("myForm")
+myForm.addEventListener("input", cleanErrors);
