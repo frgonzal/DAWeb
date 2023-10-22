@@ -17,7 +17,7 @@ Investigue y explique **con sus propias palabras** 3 posibles ataques que un usu
 El usuario podría enviar un archivo ejecutable que tome control del servidor. Para esto, el usuario malicioso tiene que encontrar la forma de ejecutar el archivo que envio, pero tener el archivo ejecutable en los archivos locales del servidor ya deja expuesto el servidor.
 
 - Sobreescribir archivos locales:  
-Podrían sobreescribirse archivos locales importantes o archivos que se ejecuten para que el servidor funcione, lo que le puede dar control del servidor al usuario malicioso.
+Podrían sobreescribirse archivos locales importantes o archivos que se ejecuten para que el servidor funcione, lo que le puede dar control del servidor al usuario malicioso. También pueden intentar sobreescribir archivos de otros usuarios en la aplicación, lo que puede poner en riesgo la información del usuario atacado.
 
 - Guardar archivo en alguna ubicacion especial:  
 El archivo podría terminar en otra ubicación distinta a la designada para almacenar los archivos de los usuarios, y en esa otra carpeta podría haber información que pondría en riesgo el servidor, o también podrían tomar control de la máquina en la que esta corriendo el servidor.
@@ -35,6 +35,6 @@ Ahora que ya tenemos claro que descuidar el manejo de archivos es peligroso, les
 
 - Cambiar nombre del archivo utilizando una funcion hash que reciba varios parametros del usuario, evitando así que el nombre final del archivo no sobreescriba archivos locales o que el nombre contenga instrucciones ejecutables.
 
-- Limitar el tamaño de archivos que se pueden subir, ya que si no se limitan un usuario malicioso podría atacar el servidor subiendo archivos muy pesados.
+- Concatenar al nombre del archivo, ya modificado por la funcion hash, un identificador único para evitar que un usuario pueda sobreescribir archivos de otros usuarios. 
 
 
