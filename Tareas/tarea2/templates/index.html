@@ -13,19 +13,11 @@
             <span style="color:Blue;">C</span><span style="color:white;">hi</span><span style="color:red;">le</span>
         </p>
         
-        <a href="{{url_for('registrar_hincha')}}">
-            <button class = "button_" id="re-hincha">        Registrar hincha         </button >
-            </a>
-            <a href="{{url_for('registrar_artesano')}}">
-                <button class = "button_" id="re-artesano">  Registrar artesano       </button>
-            </a>
-            <a href="{{url_for('ver_hinchas', page=0)}}">
-                <button class = "button_" id="li-hincha">    Ver listado de hinchas   </button>
-            </a>
-            <a href="{{url_for('ver_artesanos', page=0)}}">
-                <button class = "button_" id="li-artesanos"> Ver listado de artesanos </button>
-            </a>
-        </div>
+        <a href="{{url_for('registrar_hincha')}}"      class="button_"> Registrar hincha         </a>
+        <a href="{{url_for('registrar_artesano')}}"    class="button_"> Registrar artesano       </a>
+        <a href="{{url_for('ver_hinchas', page=0)}}"   class="button_"> Ver listado de hinchas   </a>
+        <a href="{{url_for('ver_artesanos', page=0)}}" class="button_"> Ver listado de artesanos </a>
+    </div>
 
-    </body>
+</body>
 </html>
