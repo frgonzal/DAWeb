@@ -1,0 +1,45 @@
+{% extends 'info/info-base.html' %}
+{% block title %} Informacion Hincha {% endblock %}
+
+{% block content %}
+    {% if hincha %}
+        <div class="rows">
+            <div class="desc"> Deporte(s) que interesa apoyar </div>
+            <div class="info"> {{hincha.sports}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Región donde vive </div> 
+            <div class="info"> {{hincha.region}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Comuna donde vive </div> 
+            <div class="info"> {{hincha.comuna}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Modo de transporte </div> 
+            <div class="info"> {{hincha.transporte}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Nombre </div> 
+            <div class="info"> {{hincha.name}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Email contacto </div> 
+            <div class="info"> {{hincha.email}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Número celular contacto </div> 
+            <div class="info"> {{hincha.phone}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Comentarios adicionales </div> 
+            <div class="info"> {{hincha.comment}} </div>
+        </div>
+
+    {% else %}
+        <p> Artesano no encontrado... </p>
+    {% endif %}
+{% endblock %}
+
+{% block others %}{% endblock %}
+{% block js %}{% endblock %}

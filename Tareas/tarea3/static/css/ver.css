@@ -1,0 +1,114 @@
+body{
+    background-color: rgb(163, 132, 132);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#btnPortada{
+    cursor: pointer;
+    position: relative;
+    margin-left: 4%;
+    margin-top: 1%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    min-width: 80%;
+    height: 100%;
+}
+.info{
+    background-color: rgb(252, 154, 154);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:3px solid black;
+    border-radius: 20px;
+}
+.rows{
+    cursor: pointer;
+    width: 100%;
+    min-height: 120px;
+    
+    display: flex;
+    border-top: 2px solid;
+}
+.titles{
+    width: 100%;
+    min-height: 50px;
+
+    display: flex;
+    font-weight: bolder;
+    font-size: 100%;
+}
+.columns{
+    border-right: 1px solid;
+    width: 20%;
+    flex-grow: 1; 
+    flex-shrink: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fotos{
+    width: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-shrink: 0;
+}
+
+a{
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.prev_next {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.prev {
+    order: 1;
+    padding-left: 5%;
+    padding-top: 1%;
+}
+.next {
+    order: 2;
+    padding-right: 5%;
+    padding-top: 1%;
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+}
+
+.button_{
+    background-color: rgb(255, 255, 255);
+    flex: 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+
+    min-height: 30px;
+    max-width: 150px;
+    
+    border: solid black;
+    border-radius: 5px;
+    
+    text-decoration: none;
+    
+    cursor: pointer;
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+}

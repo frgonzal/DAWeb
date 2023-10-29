@@ -1,0 +1,37 @@
+{% extends 'ver/ver-base.html' %}
+
+{% block title %} Ver Artesanos {% endblock %}
+
+{% block column_titles %}
+    <div class="columns">Nombre</div>
+    <div class="columns">Teléfono</div>
+    <div class="columns">Comuna</div>
+    <div class="columns">Tipo Artesanías</div>
+    <div class="fotos">Fotos</div>
+{% endblock %}
+
+{% block rows %}
+    {% if artesanos %}
+        {% for artesano in artesanos %}
+            <a href="{{url_for('info_artesano', id_artesano=artesano.id)}}">
+                <div class="rows">
+                    <div class="columns"> {{artesano.name}}       </div>
+                    <div class="columns"> {{artesano.phone}}      </div>
+                    <div class="columns"> {{artesano.comuna}}     </div>
+                    <div class="columns"> {{artesano.artesanias}} </div>
+                    <div class="fotos"><img width="120" height="120" src="{{url_for('static', filename=artesano.file)}}" alt="Tipo Artesanías"></div>
+                </div>
+            </a>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block ref_prev %}
+    {{url_for('ver_artesanos', page=page_info.current-1)}}
+{% endblock %}
+{% block ref_next %}
+    {{url_for('ver_artesanos', page=page_info.current+1)}}
+{% endblock %}
+
+
+        

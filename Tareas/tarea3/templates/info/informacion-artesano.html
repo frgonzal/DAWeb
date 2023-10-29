@@ -1,0 +1,49 @@
+{% extends 'info/info-base.html' %}
+{% block title %} Informacion Artesano {% endblock %}
+
+{% block content %}
+    {% if artesano %}
+        <div class="rows">
+            <div class="desc"> Región donde vive </div>
+            <div class="info"> {{artesano.region}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Comuna donde vive </div> 
+            <div class="info"> {{artesano.comuna}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Tipo artesanía </div>
+            <div class="info"> {{artesano.artesanias}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Descripción artesanías </div> 
+            <div class="info"> {{artesano.description}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Fotos artesanías </div> 
+            <div class="foto"> <img id="small_file" width="640" height="480" src="{{url_for('static', filename=artesano.file)}}" alt="Tipo Artesanías"> </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Nombre artesano(a) </div> 
+            <div class="info"> {{artesano.name}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Email contacto artesano(a) </div> 
+            <div class="info"> {{artesano.email}} </div>
+        </div>
+        <div class="rows">
+            <div class="desc"> Número celular contacto </div> 
+            <div class="info"> {{artesano.phone}} </div>
+        </div>
+    {% else %}
+        <p> Artesano no encontrado... </p>
+    {% endif %}
+{% endblock %}
+
+{% block others %}
+    <img id="large_file" class="fotoG" style="display: none;" width="1280" height="1024" src="{{url_for('static', filename=artesano.file)}}" alt="Tipo Artesanías">
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static', filename='js/info/artesano.js')}}"></script>
+{% endblock %}

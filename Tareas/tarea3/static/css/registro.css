@@ -1,0 +1,99 @@
+body{
+    background-color: rgb(189, 0, 0);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: white;
+    border: 2px solid rgb(13, 10, 236);
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+form{
+    margin-top: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.inputUser{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 150%;
+    cursor: pointer;
+}
+
+select{
+    text-align: center;
+    font-size: 120%;
+    padding: 1%;
+    cursor: pointer;
+}
+
+input{
+    font-size: 140%;
+    padding: 2%;
+}
+
+#titulo{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 300%;
+}
+
+#submitBtn{
+    border: 10px inset rgb(252, 61, 61);
+    border-radius: 25px;
+    color: rgb(251, 251, 251);
+    background-color: rgb(8, 0, 255);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    padding: 2%;
+    font-size: 180%;
+    cursor: pointer;
+}
+
+#comentarios{
+    font-size: 150%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    max-height: 300%;
+}
+#description{
+    font-size: 150%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    max-height: 300%;
+}
+.textoConfirmacion{
+    font-size: large;
+}
+.opciones{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3%;
+}
+.btnConf{
+    min-height: 25px;
+    font-size: large;
+    font-weight: bolder;
+    border: 2px solid;
+    min-width: 20%;
+    max-width: 100%;
+    cursor: pointer;
+}

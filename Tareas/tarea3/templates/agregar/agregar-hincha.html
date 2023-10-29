@@ -1,0 +1,46 @@
+{% extends 'agregar/agregar-base.html' %}
+
+{% block title %} Registrar Hincha {% endblock %}
+{% block form_title %} Registrar Hincha {% endblock %}
+{% block redirect %} {{url_for('submited_hincha')}} {% endblock %}
+
+
+{% block beforeRegCom %}
+    <div class="inputUser">
+        <label for="sports"> Deporte(s) que interesa apoyar </label>
+        <select id="sports" name="sports[]" multiple required>
+            {% for sport in sports %}
+                <option>{{sport}}</option>
+            {% endfor %}
+        </select>
+    </div>
+{% endblock %}
+{% block afterRegCom %}
+    <div class="inputUser">
+        <label for="transporte"> Modo de Transporte </label>
+        <select id="transporte"  name="transporte">
+            {% for transporte in transportes %}
+                <option> {{transporte}} </option>
+            {% endfor %}
+        </select>
+    </div>
+{% endblock %}
+
+{% block name_label %} Nombre {% endblock %}
+{% block email_label %} Email contacto {% endblock %}
+
+{% block others %}
+<div class="inputUser">
+    <label for="comentarios"> Comentarios adicionales (Opcional)</label>
+    <textarea id="comentarios" name="comentarios"></textarea>
+</div>
+{% endblock %}
+
+{% block submitBtn_label %} Registrar Hincha {% endblock %}
+{% block confirmation_msg %} ¿Confirma el registro de este hincha? {% endblock %}
+
+{% block js %}
+<script> const Transportes = {{transportes|tojson}}; </script>
+<script> const Sports = {{sports|tojson}}; </script>
+<script src="{{url_for('static',filename='js/registro/hincha.js')}}"></script>
+{% endblock %}
