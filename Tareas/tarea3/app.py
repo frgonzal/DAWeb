@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify
 
 from database import db
 from utils import validations as va
@@ -155,6 +155,26 @@ def info_artesano(id_artesano):
 
 
 
+############################
+#####     Gráficos     #####
+############################
+@app.route("/graficos/ver", methods=["GET"])
+def graficos():
+    return render_template("graficos.html")
+
+@app.route("/graficos/info_hinchas", methods=["GET"])
+def get_grafico_hinchas():
+    data = []
+    for sport, count in db.count_hinchas_by_sport():
+        data.append([sport, count])
+    return jsonify({"status": "ok", "data":data})
+
+@app.route("/graficos/info_artesanos", methods=["GET"])
+def get_grafico_artesanos():
+    data = []
+    for artesania, count in db.count_artesanos_by_artesania():
+        data.append([artesania, count])
+    return jsonify({"status": "ok", "data":data})
 
 ##########################################
 def error_404(error):

@@ -39,9 +39,9 @@ def getConnection():
     conv[10]=str
 
     conn = pymysql.connect(
-    db='ejemplo',
+    db='cc5002',
     user='cc5002',
-    passwd='cc5002',
+    passwd='programacionweb',
     host='localhost',
     charset='utf8',
     conv=conv)

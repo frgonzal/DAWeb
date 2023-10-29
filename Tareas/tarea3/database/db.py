@@ -50,3 +50,21 @@ def get_total_tabla(tabla):
     total = cursor.fetchone()[0]
     conn.close()
     return total
+
+
+""" GRAFICOS """
+def count_hinchas_by_sport():
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute(QUERY_DICT["count_hinchas_by_sport"])
+    result = cursor.fetchall()
+    conn.close()
+    return result
+
+def count_artesanos_by_artesania():
+    conn = get_conn()
+    cursor = conn.cursor()
+    cursor.execute(QUERY_DICT["count_artesanos_by_artesania"])
+    result = cursor.fetchall()
+    conn.close()
+    return result

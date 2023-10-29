@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title> Juegos Panamericanos Chile </title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/graficos.css')}}">
+</head>
+<body>
+    <div class="container">
+       <div id="grafico1">
+       </div> 
+    </div>
+</body>
+
+<script> const url_grafico_hinchas   = "{{url_for('get_grafico_hinchas')}}";   </script>
+<script> const url_grafico_artesanos = "{{url_for('get_grafico_artesanos')}}"; </script>
+
+<script src="{{url_for('static', filename='js/graficos.js')}}"></script>
+</html>

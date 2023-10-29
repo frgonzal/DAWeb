@@ -14,13 +14,14 @@ QUERY_DICT = {
 
     "get_region_by_name:":
         """ SELECT id, nombre
-            FROM region WHERE nombre = %s;
+            FROM  region
+            WHERE nombre = %s;
         """, 
 
 
     "get_comuna_id_by_name":
         """ SELECT id
-            FROM comuna
+            FROM  comuna
             WHERE nombre=%s;
         """,
 
@@ -163,5 +164,41 @@ QUERY_DICT = {
         "select count(*) from ",
 
     "get_last_id":
-        "SELECT LAST_INSERT_ID();"
+        "SELECT LAST_INSERT_ID();",
+
+
+
+#########  GRAFICOS  #########
+    "count_hinchas_by_sport":
+        """ select nombre, count(distinct hincha_id) as count
+            from  deporte, hincha_deporte
+            where deporte_id=id
+            group by id, nombre
+            union
+            select nombre, 0 as count
+            from  deporte
+            where (id, nombre) not in (
+                select id, nombre
+                from  deporte, hincha_deporte
+                where deporte_id=id
+                group by id, nombre
+            );
+        """,
+    
+    "count_artesanos_by_artesania":
+        """ select nombre, count(distinct artesano_id) as count
+            from  tipo_artesania, artesano_tipo
+            where tipo_artesania_id = id
+            group by id, nombre
+            union
+            select nombre, 0 as count
+            from tipo_artesania
+            where (id, nombre) not in (
+                select id, nombre
+                from  tipo_artesania, artesano_tipo
+                where tipo_artesania_id = id
+                group by id, nombre
+            );
+        """
+
 }
