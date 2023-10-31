@@ -35,7 +35,7 @@ body{
     align-items: center;
 
     font-weight: bolder;
-    font-size: large;
+    font-size: 130%;
 
     padding-top: 2%;
     padding-bottom: 1%;
@@ -49,6 +49,8 @@ body{
 
     margin-top: 20px;
     margin-bottom: 30px;
+
+    font-size: 130%;
 }
 .foto{
     cursor: pointer;

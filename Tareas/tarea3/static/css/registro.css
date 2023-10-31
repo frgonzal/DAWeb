@@ -80,13 +80,40 @@ input{
 }
 
 .opciones{
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 3%;
+    gap: 100px;
 }
 
-.button {
-    padding: 1%;
+#submitBtn {
+    width: 250px;
+    height: 80px;
+}
+
+.button-conf{
+    background-color: #ffd4d4;
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    width: 300px;
+    height: 80px;
+
+    cursor: pointer;
+
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button-conf:hover{
+    animation: anim-btn 0.2s ease-in-out forwards;
 }
