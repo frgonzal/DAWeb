@@ -13,7 +13,7 @@
 {% block rows %}
     {% if hinchas %}
         {% for hincha in hinchas %}
-            <a href="{{url_for('info_hincha', id_hincha=hincha.id)}}">
+            <a href="{{url_for('info_hincha', id_hincha=hincha.id)}}" style="width: 100%; text-decoration: none;">
                 <div class="rows">
                     <div class="columns"> {{hincha.name}}       </div>
                     <div class="columns"> {{hincha.comuna}}     </div>

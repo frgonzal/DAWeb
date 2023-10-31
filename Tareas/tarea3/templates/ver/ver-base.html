@@ -4,14 +4,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ver.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='img/icon.ico')}}" type="image/x-icon">
 </head>
 
 
 <body>
-    
     <div class="navbar">
-        <a href="{{url_for('index')}}" class="button_"> Inicio </a>
+        <a href="{{url_for('index')}}" id="btn-inicio">
+            <img src="{{url_for('static', filename='img/inicio.gif')}}" alt="Inicio" width="50px" height="50px">
+        </a>
     </div>
 
     <div id="container" class="container">
@@ -24,12 +27,12 @@
         <div class="prev_next">
             <div class="prev">
                 {% if page_info.current > 0 %}
-                    <a href="{% block ref_prev %}{% endblock %}" class="button_"> <= Página Previa </a>
+                    <a href="{% block ref_prev %}{% endblock %}" class="button"> <= Página Previa </a>
                 {% endif %}
             </div>
             <div class="next">
                 {% if page_info.current < page_info.max %}
-                    <a href="{% block ref_next %}{% endblock %}" class="button_"> Página Siguiente => </a>
+                    <a href="{% block ref_next %}{% endblock %}" class="button"> Página Siguiente => </a>
                 {% endif %}
             </div>
         </div>

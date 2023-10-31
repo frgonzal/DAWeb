@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'base.html'%}
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title> Juegos Panamericanos Chile </title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}">
-</head>
+{% block title %} Juegos Panamericanos Chile {% endblock %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}"> {% endblock %}
 
-<body>
-    <div class="container">
-        <p id="titulo"> Juegos Panamericanos
-            <span style="color:Blue;">C</span><span style="color:white;">hi</span><span style="color:red;">le</span>
-        </p>
-        
-        <a href="{{url_for('registrar_hincha')}}"      class="button_"> Registrar hincha         </a>
-        <a href="{{url_for('registrar_artesano')}}"    class="button_"> Registrar artesano       </a>
-        <a href="{{url_for('ver_hinchas', page=0)}}"   class="button_"> Ver listado de hinchas   </a>
-        <a href="{{url_for('ver_artesanos', page=0)}}" class="button_"> Ver listado de artesanos </a>
-        <a href="{{url_for('graficos')}}"              class="button_"> Ver Gráficos             </a>
+{% block body %}
+<div class="container">
+    <div class="logo-inicio">
+        <img src="{{url_for('static', filename='img/logo-inicio.png')}}"  alt="Juegos Panamericanos 2023" id="logo-inicio"> 
     </div>
-
-</body>
-</html>
+    
+    <a href="{{url_for('registrar_hincha')}}"      class="button"> Registrar hincha         </a>
+    <a href="{{url_for('registrar_artesano')}}"    class="button"> Registrar artesano       </a>
+    <a href="{{url_for('ver_hinchas', page=0)}}"   class="button"> Ver listado de hinchas   </a>
+    <a href="{{url_for('ver_artesanos', page=0)}}" class="button"> Ver listado de artesanos </a>
+    <a href="{{url_for('estadisticas')}}"          class="button"> Ver Estadísticas         </a>
+</div>
+{% endblock %}
+{% block js%}{% endblock %}

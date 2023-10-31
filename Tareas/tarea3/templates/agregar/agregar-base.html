@@ -3,11 +3,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/base.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/registro.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='img/icon.ico')}}" type="image/x-icon">
 </head>
 
 <body>
-
+    <div class="navbar">
+        <a href="{{url_for('index')}}" id="btn-inicio">
+            <img src="{{url_for('static', filename='img/inicio.gif')}}" alt="Inicio" width="50px" height="50px">
+        </a>
+    </div>
     
 <div id="containerForm" class="container">
     <div id="titulo">{% block form_title %}{% endblock %}</div>
@@ -66,15 +72,15 @@
         {% endblock %}
 
 
-        <button id="submitBtn" type="button">{% block submitBtn_label %}{% endblock %}</button>
+        <div id="submitBtn" class="button">{% block submitBtn_label %}{% endblock %}</div>
     </form>
 </div>
 
 <div id="confirmacionSubmit" class="container">
     <p class="textoConfirmacion">{% block confirmation_msg %}{% endblock %}</p>
     <div class="opciones">
-        <button id="confirmar" type="button" class="btnConf"> Sí, confirmo </button>
-        <button id="rechazar" type="button" class="btnConf"> No, quiero volver al formulario </button>
+        <div class="button" id="confirmar"> Sí, confirmo </div>
+        <div class="button" id="rechazar"  > No, quiero volver al formulario </div>
     </div>
 </div>
 

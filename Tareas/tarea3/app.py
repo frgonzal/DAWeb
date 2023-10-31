@@ -155,25 +155,31 @@ def info_artesano(id_artesano):
 
 
 
-############################
-#####     Gráficos     #####
-############################
-@app.route("/graficos/ver", methods=["GET"])
-def graficos():
-    return render_template("graficos.html")
+###############################
+#####    Estadísticas     #####
+###############################
+@app.route("/estadisticas/ver", methods=["GET"])
+def estadisticas():
+    return render_template("estadisticas.html")
 
-@app.route("/graficos/info_hinchas", methods=["GET"])
-def get_grafico_hinchas():
+@app.route("/estadisticas/informacion_hinchas", methods=["GET"])
+def grafico_hinchas():
+    categories = []
     data = []
     for sport, count in db.count_hinchas_by_sport():
-        data.append([sport, count])
+        categories.append(sport)
+        data.append(count)
+    data = {"categories":categories, "data":data}
     return jsonify({"status": "ok", "data":data})
 
-@app.route("/graficos/info_artesanos", methods=["GET"])
-def get_grafico_artesanos():
+@app.route("/estadisticas/informacion_artesanos", methods=["GET"])
+def grafico_artesanos():
+    categories = []
     data = []
     for artesania, count in db.count_artesanos_by_artesania():
-        data.append([artesania, count])
+        categories.append(artesania)
+        data.append(count)
+    data = {"categories":categories, "data":data}
     return jsonify({"status": "ok", "data":data})
 
 ##########################################

@@ -3,18 +3,26 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/base.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/registro.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='img/icon.ico')}}" type="image/x-icon">
 </head>
 
 <body>
-<div id="containerRegreso" class="container">
-    <p class="textoConfirmacion">{% block submit_msg %}{% endblock %}</p>
+    <div class="navbar">
+        <a href="{{url_for('index')}}" id="btn-inicio">
+            <img src="{{url_for('static', filename='img/inicio.gif')}}" alt="Inicio" width="50px" height="50px">
+        </a>
+    </div>
 
-    <a href="{{url_for('index')}}">
-        <button id="btnPortada"  type="button" class="btnConf"> Portada </button>
-    </a>
+    <div id="containerRegreso" class="container">
+        <p class="textoConfirmacion">{% block submit_msg %}{% endblock %}</p>
 
-</div>
+        <a href="{{url_for('index')}}" class="button">
+            <div id="btnPortada"> Portada </div>
+        </a>
+
+    </div>
     
 </body>
 </html>

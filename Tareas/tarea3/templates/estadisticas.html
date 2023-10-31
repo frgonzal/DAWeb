@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block title %} Juegos Panamericanos Chile {% endblock %}
+{% block css%} <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/estadisticas.css')}}"> {% endblock %}
+
+{% block otros %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+{% endblock %}
+
+{% block body %}
+<body>
+    <div id="container">
+       <div id="grafico_hinchas"></div>
+       <div id="grafico_artesanos"></div>
+    </div>
+</body>
+{% endblock %}
+
+{% block js %}
+<script> const url_grafico_hinchas   = "{{url_for('grafico_hinchas')}}";   </script>
+<script> const url_grafico_artesanos = "{{url_for('grafico_artesanos')}}"; </script>
+<script src="{{url_for('static', filename='js/estadisticas.js')}}"></script>
+{% endblock %}

@@ -1,15 +1,14 @@
-body{
-    background-color: rgb(189, 0, 0);
-}
-
 .container{
+    margin-top: 30px;
+    background-color: #c6f0f0;        
+    border-radius: 30px;
+
+    width: 80%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
-
-    background-color: white;
-    border: 2px solid rgb(13, 10, 236);
     padding-top: 1%;
     padding-bottom: 5%;
 }
@@ -30,8 +29,17 @@ form{
 }
 
 label{
+    border-bottom: 3px solid black;
+    background-color: #f29292;
+    width: 50%;
+    margin-bottom: 10px;
     font-size: 150%;
     cursor: pointer;
+    padding: 1%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 select{
@@ -52,18 +60,6 @@ input{
     font-size: 300%;
 }
 
-#submitBtn{
-    border: 10px inset rgb(252, 61, 61);
-    border-radius: 25px;
-    color: rgb(251, 251, 251);
-    background-color: rgb(8, 0, 255);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    padding: 2%;
-    font-size: 180%;
-    cursor: pointer;
-}
-
 #comentarios{
     font-size: 150%;
     min-width: 100%;
@@ -78,9 +74,11 @@ input{
     min-height: 40px;
     max-height: 300%;
 }
+
 .textoConfirmacion{
-    font-size: large;
+    font-size: 150%;
 }
+
 .opciones{
     width: 100%;
     display: flex;
@@ -88,12 +86,7 @@ input{
     justify-content: center;
     gap: 3%;
 }
-.btnConf{
-    min-height: 25px;
-    font-size: large;
-    font-weight: bolder;
-    border: 2px solid;
-    min-width: 20%;
-    max-width: 100%;
-    cursor: pointer;
+
+.button {
+    padding: 1%;
 }

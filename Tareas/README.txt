@@ -1,5 +1,12 @@
 Franco González
 
+====================
+TAREA 3
+====================
+
+- Los gráficos se recargan cada 2 segundos con información de la base de datos.
+
+- El icono de la barra de navegación lleva al inicio.
 
 ====================
 TAREA 2

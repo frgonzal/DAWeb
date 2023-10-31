@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/info.css')}}">
+    <title> {% block title %}{% endblock %}</title>
     <link rel="icon" href="{{url_for('static',filename='img/icon.ico')}}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/base.css')}}">
-
+    {% block css %}{% endblock %}
+    {% block otros %}{% endblock %}
 </head>
 
 <body>
@@ -15,12 +16,8 @@
             <img src="{{url_for('static', filename='img/inicio.gif')}}" alt="Inicio" width="50px" height="50px">
         </a>
     </div>
-    
-    <div id="container" class="container">
-        {% block content %}{% endblock %}
-    </div>
-    {% block others %}{% endblock %}
 
-{% block js %}{% endblock %}
+{% block body %}{% endblock %}
+{% block js%}{% endblock %}
 </body>
 </html>
